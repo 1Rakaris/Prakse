@@ -1,0 +1,359 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PepeNews | World, Business, Technology and Culture News</title>
+  <meta name="description" content="Online news platform featuring latest world news, multilingual content, and in-depth coverage of politics, tech, culture, and business."/>
+  <meta name="keywords" content="news, world news, business news, technology news, culture news, Latvia, multilingual news, newsroom"/>
+  <meta name="robots" content="index, follow"/>
+  <meta name="author" content="PepeNews"/>
+  <meta name="theme-color" content="#d80027"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:title" content="PepeNews | World, Business, Technology and Culture News"/>
+  <meta property="og:description" content="Online news platform featuring latest world news, multilingual content, and in-depth coverage of politics, tech, culture, and business."/>
+  <meta property="og:image" content="icons/pepaniga.png"/>
+  <meta property="og:locale" content="en_US"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="PepeNews | World, Business, Technology and Culture News"/>
+  <meta name="twitter:description" content="Online news platform featuring latest world news, multilingual content, and in-depth coverage of politics, tech, culture, and business."/>
+  <meta name="twitter:image" content="icons/pepaniga.png"/>
+  <link rel="icon" type="image/png" href="icons/pepaniga.png"/>
+  <link rel="shortcut icon" href="icons/pepaniga.png"/>
+  <link rel="apple-touch-icon" href="icons/pepaniga.png"/>
+  <link rel="stylesheet" href="c1.css"/>
+</head>
+<body>
+  <div id="top"></div>
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <div data-i18n="topbarText"></div>
+      <div class="links topbar-meta">3.projektu darbs | Žanis Sils | IT-P-Ne-2</div>
+    </div>
+  </div>
+
+  <header>
+    <div class="container header-inner">
+      <div class="logo">
+        <div class="logo-badge">
+          <img class="logo-mark" src="icons/pepaniga.png" alt="" aria-hidden="true"/>
+        </div>
+        <div class="logo-title">PepeNews</div>
+      </div>
+      <nav aria-label="Main navigation">
+        <a href="#top" data-i18n="navHome"></a>
+        <a href="#news" data-i18n="navLatest"></a>
+        <a href="#contact" data-i18n="navContact"></a>
+      </nav>
+      <div class="header-tools">
+        <div class="lang-picker" id="langPicker">
+          <button class="lang-toggle" id="langToggle" type="button" aria-haspopup="true" aria-expanded="false">
+            <span class="lang-current" id="langCurrent">English</span>
+            <span class="lang-caret" aria-hidden="true">∨</span>
+          </button>
+          <div class="lang-menu hidden" id="langMenu" role="menu" aria-label="Language list">
+            <button class="lang-option active" data-lang-option="en" type="button" role="menuitem">English</button>
+            <button class="lang-option" data-lang-option="lv" type="button" role="menuitem">Latvie&scaron;u</button>
+          </div>
+        </div>
+        <button class="theme-btn icon-btn" id="themeToggle" type="button" aria-label="Toggle theme" title="Toggle theme">
+          <img class="theme-icon" id="themeIcon" src="" alt=""/>
+        </button>
+        <label class="search" aria-label="Search news">
+          <span class="sr-only" data-i18n="searchLabel"></span>
+          <img class="search-icon" id="searchIcon" src="" alt="" aria-hidden="true"/>
+          <input id="searchInput" type="text" data-i18n-placeholder="searchPlaceholder" placeholder=""/>
+        </label>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container main-grid">
+        <article class="main-story">
+          <div class="main-photo"></div>
+          <div class="main-copy">
+            <div class="kicker" data-i18n="heroKicker"></div>
+            <h1 data-i18n="heroTitle"></h1>
+            <p class="lead" data-i18n="heroLead"></p>
+            <div class="meta">
+              <span>08:45</span>
+              <span data-i18n="heroMetaRead"></span>
+              <span data-i18n="heroMetaUpdated"></span>
+            </div>
+            <div class="btn-row">
+              <a class="btn primary" href="#news" data-i18n="heroBtnPrimary"></a>
+              <a class="btn" href="#contact" data-i18n="heroBtnSecondary"></a>
+            </div>
+          </div>
+        </article>
+        <aside class="weather-box" aria-label="Weather overview">
+          <div class="weather-head">
+            <div>
+              <div class="kicker" data-i18n="weatherKicker"></div>
+              <h2 class="weather-city" data-i18n="weatherCity" id="weatherCity"></h2>
+            </div>
+            <div class="weather-icon" aria-hidden="true">
+              <img src="icons/weather.png" alt=""/>
+            </div>
+          </div>
+          <div class="weather-main">
+            <div class="weather-temp" id="weatherTemp"></div>
+            <div class="weather-copy">
+              <strong id="weatherStatus"></strong>
+              <span id="weatherFeels"></span>
+            </div>
+          </div>
+          <div class="weather-stats">
+            <div class="weather-stat">
+              <span data-i18n="weatherHumidityLabel"></span>
+              <strong id="weatherHumidityValue"></strong>
+              <img class="weather-corner-icon" src="icons/Humidity.png" alt="" aria-hidden="true"/>
+            </div>
+            <div class="weather-stat">
+              <span data-i18n="weatherWindLabel"></span>
+              <strong id="weatherWindValue"></strong>
+              <img class="weather-corner-icon" src="icons/wind.png" alt="" aria-hidden="true"/>
+            </div>
+            <div class="weather-stat">
+              <span data-i18n="weatherRainLabel"></span>
+              <strong id="weatherRainValue"></strong>
+              <img class="weather-corner-icon" src="icons/rain.png" alt="" aria-hidden="true"/>
+            </div>
+          </div>
+          <div class="forecast-row">
+            <div class="forecast-card">
+              <span data-i18n="forecastNow"></span>
+              <strong id="weatherNowTemp"></strong>
+              <img class="weather-corner-icon" id="weatherNowIcon" src="icons/Neutral.png" alt="" aria-hidden="true"/>
+            </div>
+            <div class="forecast-card">
+              <span data-i18n="forecastAfternoon"></span>
+              <strong id="weatherAfternoonTemp"></strong>
+              <img class="weather-corner-icon" id="weatherTomorrowIcon" src="icons/Neutral.png" alt="" aria-hidden="true"/>
+            </div>
+            <div class="forecast-card">
+              <span data-i18n="forecastEvening"></span>
+              <strong id="weatherEveningTemp"></strong>
+              <img class="weather-corner-icon" id="weatherDayAfterIcon" src="icons/Neutral.png" alt="" aria-hidden="true"/>
+            </div>
+          </div>
+          <p class="weather-note" id="weatherNote">Loading weather...</p>
+        </aside>
+      </div>
+    </section>
+
+    <!-- topicsX -->
+    <section class="section section-topics" id="topics">
+      <div class="container">
+        <div class="section-head">
+          <h2 data-i18n="topicsTitle"></h2>
+        </div>
+        <div class="filters" id="categoryRow">
+          <button class="chip active" data-category="all" data-i18n="filterAll"></button>
+          <button class="chip" data-category="world" data-i18n="filterWorld"></button>
+          <button class="chip" data-category="business" data-i18n="filterBusiness"></button>
+          <button class="chip" data-category="tech" data-i18n="filterTech"></button>
+          <button class="chip" data-category="culture" data-i18n="filterCulture"></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- newsX -->
+    <section class="section section-news" id="news">
+      <div class="container">
+        <div class="section-head">
+          <h2 data-i18n="newsTitle"></h2>
+          <span class="section-note" data-i18n="newsCount"></span>
+        </div>
+        <div class="news-list" id="newsGrid">
+          <article class="news-card" id="story-world" data-category="world" data-story="summitRound">
+            <div class="card-image a1"></div>
+            <div class="card-text">
+              <span class="tag" data-i18n="summitRoundTag"></span>
+              <h3 data-i18n="summitRoundTitle"></h3>
+              <p data-i18n="summitRoundText"></p>
+            </div>
+          </article>
+          <article class="news-card" id="story-business" data-category="business" data-story="marketShift">
+            <div class="card-image a2"></div>
+            <div class="card-text">
+              <span class="tag" data-i18n="marketShiftTag"></span>
+              <h3 data-i18n="marketShiftTitle"></h3>
+              <p data-i18n="marketShiftText"></p>
+            </div>
+          </article>
+          <article class="news-card" id="story-tech" data-category="tech" data-story="aiWorkflow">
+            <div class="card-image a3"></div>
+            <div class="card-text">
+              <span class="tag" data-i18n="aiWorkflowTag"></span>
+              <h3 data-i18n="aiWorkflowTitle"></h3>
+              <p data-i18n="aiWorkflowText"></p>
+            </div>
+          </article>
+          <article class="news-card" data-category="culture" data-story="designShow">
+            <div class="card-image a4"></div>
+            <div class="card-text">
+              <span class="tag" data-i18n="designShowTag"></span>
+              <h3 data-i18n="designShowTitle"></h3>
+              <p data-i18n="designShowText"></p>
+            </div>
+          </article>
+          <article class="news-card" data-category="world" data-story="climateWatch">
+            <div class="card-image a5"></div>
+            <div class="card-text">
+              <span class="tag" data-i18n="climateWatchTag"></span>
+              <h3 data-i18n="climateWatchTitle"></h3>
+              <p data-i18n="climateWatchText"></p>
+            </div>
+          </article>
+          <article class="news-card" data-category="business" data-story="smallBizTools">
+            <div class="card-image a6"></div>
+            <div class="card-text">
+              <span class="tag" data-i18n="smallBizToolsTag"></span>
+              <h3 data-i18n="smallBizToolsTitle"></h3>
+              <p data-i18n="smallBizToolsText"></p>
+            </div>
+          </article>
+          <article class="news-card" data-category="world" data-story="borderSeason">
+            <div class="card-image a7"></div>
+            <div class="card-text">
+              <span class="tag" data-i18n="borderSeasonTag"></span>
+              <h3 data-i18n="borderSeasonTitle"></h3>
+              <p data-i18n="borderSeasonText"></p>
+            </div>
+          </article>
+          <article class="news-card" data-category="business" data-story="retailPlans">
+            <div class="card-image a8"></div>
+            <div class="card-text">
+              <span class="tag" data-i18n="retailPlansTag"></span>
+              <h3 data-i18n="retailPlansTitle"></h3>
+              <p data-i18n="retailPlansText"></p>
+            </div>
+          </article>
+          <article class="news-card" data-category="tech" data-story="localAiTools">
+            <div class="card-image a9"></div>
+            <div class="card-text">
+              <span class="tag" data-i18n="localAiToolsTag"></span>
+              <h3 data-i18n="localAiToolsTitle"></h3>
+              <p data-i18n="localAiToolsText"></p>
+            </div>
+          </article>
+          <article class="news-card" data-category="culture" data-story="museumEvenings">
+            <div class="card-image a10"></div>
+            <div class="card-text">
+              <span class="tag" data-i18n="museumEveningsTag"></span>
+              <h3 data-i18n="museumEveningsTitle"></h3>
+              <p data-i18n="museumEveningsText"></p>
+            </div>
+          </article>
+          <article class="news-card" data-category="tech" data-story="quickFixes">
+            <div class="card-image a11"></div>
+            <div class="card-text">
+              <span class="tag" data-i18n="quickFixesTag"></span>
+              <h3 data-i18n="quickFixesTitle"></h3>
+              <p data-i18n="quickFixesText"></p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- contactsX + newsletterX -->
+    <section class="section" id="featured">
+      <div class="container bottom-grid">
+        <div class="panel contact-panel" id="contact">
+          <div class="section-head section-head-tight">
+            <div class="contact-title-row">
+              <img class="contact-title-icon" id="contactTitleIcon" src="" alt="" aria-hidden="true"/>
+              <h2 data-i18n="contactTitle"></h2>
+            </div>
+          </div>
+          <p class="feature-text" data-i18n="contactIntro"></p>
+          <div class="contact-list">
+            <div class="contact-row">
+              <strong data-i18n="contactRow1Title"></strong>
+              <span class="mini-note" data-i18n="contactRow1Text"></span>
+            </div>
+            <div class="contact-row">
+              <strong data-i18n="contactRow2Title"></strong>
+              <span class="mini-note" data-i18n="contactRow2Text"></span>
+            </div>
+            <div class="contact-row">
+              <strong data-i18n="contactRow3Title"></strong>
+              <span class="mini-note" data-i18n="contactRow3Text"></span>
+            </div>
+            <div class="contact-row">
+              <strong data-i18n="contactRow4Title"></strong>
+              <span class="mini-note" data-i18n="contactRow4Text"></span>
+            </div>
+          </div>
+          <div class="btn-row feature-actions">
+            <a class="btn primary" href="mailto:pepenews@gmail.com" data-i18n="contactBtnPrimary"></a>
+            <a class="btn" href="mailto:support@gmail.com" data-i18n="contactBtnSecondary"></a>
+          </div>
+        </div>
+        <div class="panel support-box">
+          <div class="kicker kicker-light" data-i18n="supportKicker"></div>
+          <h2 class="newsletter-title" data-i18n="supportTitle"></h2>
+          <p data-i18n="supportText"></p>
+          <form id="newsletterForm" novalidate>
+            <input type="email" data-i18n-placeholder="emailPlaceholder" placeholder="" required/>
+            <button class="btn primary" type="submit" data-i18n="supportButton"></button>
+          </form>
+          <div id="formMessage" class="form-message" aria-live="polite">
+            <img id="formMessageIcon" class="form-message-icon hidden" src="icons/error.png" alt="" aria-hidden="true"/>
+            <span id="formMessageText"></span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- footerX -->
+  <footer>
+    <div class="container footer-inner">
+      <div data-i18n="footerCopy"></div>
+      <div class="footer-right">
+        <div class="footer-brand">PEPENEWS</div>
+        <div class="footer-social" aria-label="PepeNews social links">
+          <a class="social-link" href="https://telegram.org/" target="_blank" rel="noopener noreferrer" aria-label="Telegram">
+            <img src="icons/telegram.png" alt="" aria-hidden="true"/>
+          </a>
+          <a class="social-link" href="https://www.reddit.com/" target="_blank" rel="noopener noreferrer" aria-label="Reddit">
+            <img src="icons/reddit.png" alt="" aria-hidden="true"/>
+          </a>
+          <a class="social-link" href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+            <img src="icons/youtube.png" alt="" aria-hidden="true"/>
+          </a>
+          <a class="social-link" href="https://www.twitch.tv/" target="_blank" rel="noopener noreferrer" aria-label="Twitch">
+            <img src="icons/twitch.png" alt="" aria-hidden="true"/>
+          </a>
+          <a class="social-link" href="https://discord.com/" target="_blank" rel="noopener noreferrer" aria-label="Discord">
+            <img src="icons/discord.png?v=2" alt="" aria-hidden="true"/>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- glanceX -->
+  <div class="glance-overlay hidden" id="glanceOverlay" aria-hidden="true">
+    <div class="glance-dialog" role="dialog" aria-modal="true" aria-labelledby="glanceTitle">
+      <button class="glance-close" id="glanceClose" type="button" aria-label="Close preview">✖</button>
+      <div class="glance-media" id="glanceMedia"></div>
+      <div class="glance-content">
+        <span class="tag" id="glanceTag">World</span>
+        <h3 id="glanceTitle">Story title</h3>
+        <p class="glance-summary" id="glanceSummary">Short story summary.</p>
+        <p class="glance-detail" id="glanceDetail">Extra details appear here in a compact Zen-style glance panel.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- scriptsX -->
+  <script src="weather.js"></script>
+  <script src="index.js"></script>
+</body>
+</html>
